@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+
+
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta name="description" content=" StyleIt.js is a simple text editor API built for Developers.
+  with data in JSON for efficent data saving.
+  More important StyleIt.js knows how to use ANY Css rule.">
+  <meta property="og:title" content=" StyleIt.js is a simple text editor API built for Developers.
+  with data in JSON for efficent data saving.
+  More important StyleIt.js knows how to use ANY Css rule.">
+  <meta property="og:type" content="website">
+  <meta property="og:description" content=" StyleIt.js is a simple text editor API built for Developers.
+  with data in JSON for efficent data saving.
+  More important StyleIt.js knows how to use ANY Css rule.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@StyleIt">
+  <meta name="twitter:creator" content="@StyleIt">
+  <meta name="twitter:title" content="StyleIt">
+  <meta name="twitter:description" content=" StyleIt.js is a simple text editor API built for Developers.
+  with data in JSON for efficent data saving.
+  More important StyleIt.js knows how to use ANY Css rule.">
+  <title>Style It</title>
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css
+
+
+
+  ">
+  <script src="./editor.js"></script>
+  <script src="./textEditor.js"></script>
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- ======= Mobile nav toggle button ======= -->
+  <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="d-flex flex-column justify-content-center">
+
+    <nav class="nav-menu ">
+      <ul>
+        <li class="active"><a href="#hero"><i class="fas fa-home"></i><span>Home</span></a></li>
+        <li><a href="#about"><i class="fas fa-address-card"></i> <span>About</span></a></li>
+        <li><a href="#playground"><i class="far fa-file-alt"></i> <span>Documantion</span></a></li>
+        <li><a href="#editor" onclick="openEditor()"><i class="fas fa-play"></i> <span>Playground</span></a></li>
+        <li><a href="#contact"><i class="fas fa-envelope"></i><span>Contact</span></a></li>
+      </ul>
+    </nav><!-- .nav-menu -->
+  </header><!-- End Header -->
+  <div class="header-page">
+    <div class="squares square1 rellax"></div>
+    <div data-rellax-speed="-4" class="squares square2 rellax">
+<div class="by-creators">
+  Made By Adi L & Jonathan K.
+</div>
+    </div>
+    <div data-rellax-speed="-4" class="squares square3 rellax">
+
+    </div>
+    <div data-rellax-speed="-4" class="squares square4 rellax">
+
+
+    </div>
+    <div data-rellax-speed="-4" class="squares square5 rellax">
+
+    </div>
+  </div>
+
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center">
+    <div class="container" data-aos="zoom-in" data-aos-delay="100">
+      <div style="text-align: center;" class="row">
+
+        <div class="col-lg-12 col-md-12 col-sm-12">
+
+          <div  data-rellax-speed="3"   class="rellax" id="top-text-editor">
+            <h1  class="color-primary " style="display: inline;margin-top: 1rem;">StyleIt</h1> <span> (Beta) </span>
+            <!-- <p>Do whatever you want when you want to.
+            </p> -->
+          </div>
+
+          <div class="social-links mx-auto mt-5">
+
+            <div class="text-editor mx-auto ">
+              <button class="text-editor-button">
+                <i class="fas fa-bold"></i>
+              </button>
+              <button class="text-editor-button">
+                <i class="fas fa-italic"></i>
+              </button>
+              <button class="text-editor-button">
+                <i class="fas fa-strikethrough"></i>
+              </button>
+              <button class="text-editor-button">
+                <i class="fas fa-underline"></i>
+              </button>
+              <div class="seperator"></div>
+              <button class="text-editor-button">
+                <i class="fas fa-align-left"></i>
+              </button>
+              <button class="text-editor-button">
+                <i class="fas fa-align-center"></i>
+              </button>
+              <button class="text-editor-button">
+                <i class="fas fa-align-right"></i>
+              </button>
+              <div class="seperator"></div>
+
+              <!-- <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+            <div class="btn-group mr-2" role="group" aria-label="First group">
+              <button type="button" class="btn btn-secondary"><svg height="15" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="italic" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-italic fa-w-10 fa-2x"><path fill="currentColor" d="M320 48v32a16 16 0 0 1-16 16h-62.76l-80 320H208a16 16 0 0 1 16 16v32a16 16 0 0 1-16 16H16a16 16 0 0 1-16-16v-32a16 16 0 0 1 16-16h62.76l80-320H112a16 16 0 0 1-16-16V48a16 16 0 0 1 16-16h192a16 16 0 0 1 16 16z" class=""></path></svg></button>
+              <button type="button" class="btn btn-secondary"><svg height="15" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-inline--fa fa-bold fa-w-12 fa-2x"><path fill="currentColor" d="M333.49 238a122 122 0 0 0 27-65.21C367.87 96.49 308 32 233.42 32H34a16 16 0 0 0-16 16v48a16 16 0 0 0 16 16h31.87v288H34a16 16 0 0 0-16 16v48a16 16 0 0 0 16 16h209.32c70.8 0 134.14-51.75 141-122.4 4.74-48.45-16.39-92.06-50.83-119.6zM145.66 112h87.76a48 48 0 0 1 0 96h-87.76zm87.76 288h-87.76V288h87.76a56 56 0 0 1 0 112z" class=""></path></svg></button>
+              <button type="button" class="btn btn-secondary"><svg height="15" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-underline fa-w-14 fa-2x"><path fill="currentColor" d="M32 64h32v160c0 88.22 71.78 160 160 160s160-71.78 160-160V64h32a16 16 0 0 0 16-16V16a16 16 0 0 0-16-16H272a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h32v160a80 80 0 0 1-160 0V64h32a16 16 0 0 0 16-16V16a16 16 0 0 0-16-16H32a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16zm400 384H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z" class=""></path></svg></button>
+            </div>
+
+          </div>   -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>We Help Developers
+          </h2>
+          <div class="row">
+
+            <div class="col-lg-6 col-sm-12 col-md-12 mx-auto">
+              <p>
+                We can give your App superpowers to do things that you never thought possible. Let us delight your
+                customers and empower your needs... through pure styling.
+              </p>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-lg-6 col-sm-12 col-md-12 mx-auto ">
+              <img style="max-width: 100%; width:300px" src="./assets/img/hero.svg" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+
+    <section id="playground" class="styleIt">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Text Editor API concepts
+          </h2>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-10">
+            <h3>Installation</h3>
+            <p>Node package</p>
+            <p>Source from CDN(Coming Soon)</p>
+            <p>Local file from project</p>
+
+            <div>
+              <h2>Node module</h2>
+              <h6>Install the package via npm</h6>
+              <div class="code-wrapper">
+                <code>
+              npm i styleit-api --save
+            </code>
+              </div>
+
+            </div>
+
+            <p> Include the module in your application</p>
+            <div class="code-wrapper">
+              <code>
+                import StyelIt from 'styleit-api';
+              </code>
+            </div>
+
+            <br>
+            <h2>Load from CDN</h2>
+            <code>
+            coming soon!
+            </code>
+            <br>
+            <br>
+            <h2>Initialization</h2>
+            <p>In order to inizialize StyleIt, you need to pass the Element Object or Element Id to the StyleIt
+              constracture.
+              Note that StyleIt will be available only on this element and its child nodes.</p>
+            <div>
+              <div class="code-wrapper">
+                <code>
+                  import StyelIt from 'styleit-api';
+                  <br>
+                  const styleIt = new  StyleIt(*Element Object or Element Id*);
+                </code>
+              </div>
+              <br>
+              <br>
+            </div>
+            <h2>StyleIt provides two working modes</h2>
+            <div class="code-wrapper">
+              <code>
+                import StyelIt from 'styleit-api';
+                <br>
+                const styleIt = new  StyleIt(*Element Object or Element Id*);
+                <br>
+                cont MODES = StyleIt.Modes;
+              </code>
+            </div>
+
+            <table class="table  table-striped">
+              <tbody>
+                <tr>
+                  <th scope="col">Mode</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Description</th>
+                </tr>
+                <tr>
+                  <td>Toggle</td>
+                  <td>String</td>
+                  <td>Style elements with on/off functionality =&gt; like bold,underline,italic</td>
+                </tr>
+                <tr>
+                  <td>Extend</td>
+                  <td>String</td>
+                  <td>Only extends the currect style =&gt; font-size, color, backgorund</td>
+                </tr>
+              </tbody>
+            </table>
+            <div>
+              Note that the Extend mod will not cancel the style when selecting the same rule twice.
+            </div>
+            <br>
+            <h2>How to use</h2>
+            <p>Modes.Toggle</p>
+            <div class="code-wrapper">
+              <code>
+                import StyelIt from 'styleit-api';
+                <br>
+                const styleIt = new  StyleIt(*Element Object or Element Id*);
+                <br>
+                const underline =()=> styleIt.execCmd('text-decoration', 'underline', Modes.Toggle);
+                <br>
+                const bold =()=> styleIt.execCmd('font-weight', 'bold', Modes.Toggle);
+              </code>
+            </div>
+
+
+            <br>
+            <p>Modes.Extend</p>
+            <div class="code-wrapper">
+              <code>
+                import StyelIt from 'styleit-api';
+                <br>
+                const styleIt = new  StyleIt(*Element Object or Element Id*);
+                <br>
+                const changeColor =(color)=> styleIt.execCmd('color', color, Modes.Extend);
+                <br>
+                const changeSize =(size)=> styleIt.execCmd('font-size', size, Modes.Extend);
+              </code>
+            </div>
+
+
+
+            <br>
+            <h2>With Options</h2>
+            <div class="code-wrapper">
+              <code>
+                import StyelIt from 'styleit-api';
+                <br>
+                const styleIt = new  StyleIt(*Element Object or Element Id*);
+                <br>
+                const changeAlign =(align)=>   styleIt.execCmd('text-align', align, Modes.Extend,{
+                  <br>
+                  target:'block' <br>
+                  });
+                <br>
+              </code>
+            </div>
+
+
+            <table class="table   table-striped">
+              <tbody>
+                <tr>
+                  <th scope="col">Tool</th>
+                  <th scope="col">Configuration</th>
+                  <th scope="col">Description</th>
+                </tr>
+                <tr>
+                  <td>Target</td>
+                  <td>{target:'block'}</td>
+                  <td>Will apply on the closest P or DIV tag element</td>
+                </tr>
+                <tr>
+                  <td>as</td>
+                  <td>{as:'inline'}</td>
+                  <td>Will apply as inline inside P with block options </td>
+                </tr>
+                <tr>
+                  <td>Selection</td>
+                  <td>{selection:false}</td>
+                  <td>selection false will prevent text to wrap with selection</td>
+                </tr>
+              </tbody>
+            </table>
+            <h2>Css Class API</h2>
+            <p>The Css Class API lets you create a Css class with your pre-made rules.
+              You can pass this class to a StyleIt object and use it as a markup just like underline or bold.</p>
+            <h3>How to use</h3>
+            <div class="code-wrapper">
+              <code>
+                import StyelIt from 'styleit-api';
+                <br>
+                const styleIt = new  StyleIt(*Element Object or Element Id*);
+                <br>
+                const toggleClass =(name)=> styleIt.ToggleClass(name);
+                <br>
+              </code>
+            </div>
+
+            <h2>API Tools</h2>
+            <table class="table   table-striped">
+              <tbody>
+                <tr>
+                  <th scope="col">Tool</th>
+                  <th scope="col">Configuration</th>
+                  <th scope="col">Description</th>
+                </tr>
+                <tr>
+                  <td>Undo Redo</td>
+                  <td>None</td>
+                  <td>Coming soon!</td>
+                </tr>
+                <tr>
+                  <td>Keyboard</td>
+                  <td> const config = {<br>
+                    onKeyPress:[ <br>
+                    ["b",()=> StyleIt.ExecCmd("font-weight", "bold", StyleIt.Modes.Toggle)]<br>
+                    ],<br>
+                    }
+                    <br>
+                    const styleIt = new StyleIt(*Element Object or Element Id*,config);</td>
+                 <td>
+                  The first item will be the key name and the second will be the function.
+                 </td>
+                </tr>
+                <tr>
+                  <td>Copy Paste</td>
+                  <td>None</td>
+                  <td>Copies the text with it's style. (Works only when using Copy/Paste inside a StyleIt Holder)</td>
+                </tr>
+                <tr>
+                  <td>Inspector</td>
+                  <td> const config = {<br>
+                    onInspect: (styles) =&gt; {<br>
+                    // the styles on the element..<br>
+                    },<br>
+                    }
+                    <br>
+                    const styleIt = new StyleIt(*Element Object or Element Id*,config);
+                    }
+                  </td>
+                  <td> The inspector will trigger your function on every style change with the style in a key-value
+                    format.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <h2>Inspector</h2>
+            <div class="code-wrapper">
+              <code>
+                  const config = {<br>
+                  onInspect: (styles) =&gt; {<br>
+                    //grab the style<br>
+                  },<br>
+                  const styleIt = new  StyleIt(*Element Object or Element Id*,config);
+                }
+              </code>
+            </div>
+            <br>
+            <h3>Save Function</h3>
+            <div class="code-wrapper">
+              <code>
+                  const styleIt = new  StyleIt(*Element Object or Element Id*,config);
+                  <br>
+                 const savedContent = styleIt.Save();
+              </code>
+            </div>
+            <h6>Will create a clean JSON from your content. Note that this function will also filter every invalid tags
+              and chars.</h6>
+            <h3>Load Function</h3>
+            <div class="code-wrapper">
+              <code>
+                  const styleIt = new  StyleIt(*Element Object or Element Id*,config);
+                  <br>
+                  styleIt.Load(savedJson);
+              </code>
+            </div>
+            <h6></h6>
+            <h6>Will create a html markup from your JOSN content and will append it into the end of the editor.</h6>
+            <p>and will inject it into the container.</p>
+            <h6>Load can use only json Data from the Save method.</h6>
+            <h3>Destroy</h3>
+            <h6>Will remove all StyleIt functionality.</h6>
+
+            <div class="code-wrapper">
+              <code>
+                  const styleIt = new  StyleIt(*Element Object or Element Id*,config);
+                  <br>
+                  styleIt.Destroy();
+              </code>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+
+      </div>
+    </section>
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+        <div class="row mt-1">
+          <div class="col-lg-6 mx-auto">
+            <div class="info ">
+              <div class="email ">
+                <a href="mailto:styleit.api@gmail.com"><i class="fas fa-envelope"></i>
+                  <h4>Got questions?</h4>
+                  <p>We are here to answer any questions you may have
+                  </p>
+                </a>
+
+              </div>
+
+
+            </div>
+
+          </div>
+
+
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha2/js/bootstrap.bundle.min.js"
+    integrity="sha384-BOsAfwzjNJHrJ8cZidOg56tcQWfp6y72vEJ8xQ9w6Quywb24iOsW913URv1IS4GD"
+    crossorigin="anonymous"></script>
+
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="./code.js"></script>
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+  <script src="./rellax.min.js"></script>
+  <script>
+    var rellax = new Rellax('.rellax');
+  </script>
+</body>
+
+</html>
