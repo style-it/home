@@ -54,7 +54,9 @@
 <body>
 
   <!-- ======= Mobile nav toggle button ======= -->
-  <button type="button" class="mobile-nav-toggle d-xl-none"><i class="icofont-navigation-menu"></i></button>
+  <button type="button" class="mobile-nav-toggle d-xl-none">
+    <i class="fas fa-bars"></i>
+  </button>
 
   <!-- ======= Header ======= -->
   <header id="header" class="d-flex flex-column justify-content-center">
@@ -69,12 +71,9 @@
       </ul>
     </nav><!-- .nav-menu -->
   </header><!-- End Header -->
-  <div class="header-page">
-    <div class="squares square1 rellax"></div>
+  <div class="header-page aria-hidden screen-only">
+    <div  data-rellax-speed="-4" class="squares square1 rellax "></div>
     <div data-rellax-speed="-4" class="squares square2 rellax">
-<div class="by-creators">
-  Made By Adi L & Jonathan K.
-</div>
     </div>
     <div data-rellax-speed="-4" class="squares square3 rellax">
 
@@ -89,19 +88,20 @@
   </div>
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center">
+  <section id="hero" class="d-flex flex-column justify-content-center screen-only">
     <div class="container" data-aos="zoom-in" data-aos-delay="100">
       <div style="text-align: center;" class="row">
 
         <div class="col-lg-12 col-md-12 col-sm-12">
 
-          <div  data-rellax-speed="3"   class="rellax" id="top-text-editor">
+          <div  data-rellax-speed="3"   class="rellax " id="top-text-editor">
             <h1  class="color-primary " style="display: inline;margin-top: 1rem;">StyleIt</h1> <span> (Beta) </span>
-            <!-- <p>Do whatever you want when you want to.
-            </p> -->
+            <p class="mt-5">With super Power.
+            </p>
+          
           </div>
 
-          <div class="social-links mx-auto mt-5">
+          <div data-rellax-speed="-4" class="rellaxsocial-links mx-auto mt-2 screen-only">
 
             <div class="text-editor mx-auto ">
               <button class="text-editor-button">
@@ -128,17 +128,13 @@
               </button>
               <div class="seperator"></div>
 
-              <!-- <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-            <div class="btn-group mr-2" role="group" aria-label="First group">
-              <button type="button" class="btn btn-secondary"><svg height="15" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="italic" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512" class="svg-inline--fa fa-italic fa-w-10 fa-2x"><path fill="currentColor" d="M320 48v32a16 16 0 0 1-16 16h-62.76l-80 320H208a16 16 0 0 1 16 16v32a16 16 0 0 1-16 16H16a16 16 0 0 1-16-16v-32a16 16 0 0 1 16-16h62.76l80-320H112a16 16 0 0 1-16-16V48a16 16 0 0 1 16-16h192a16 16 0 0 1 16 16z" class=""></path></svg></button>
-              <button type="button" class="btn btn-secondary"><svg height="15" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512" class="svg-inline--fa fa-bold fa-w-12 fa-2x"><path fill="currentColor" d="M333.49 238a122 122 0 0 0 27-65.21C367.87 96.49 308 32 233.42 32H34a16 16 0 0 0-16 16v48a16 16 0 0 0 16 16h31.87v288H34a16 16 0 0 0-16 16v48a16 16 0 0 0 16 16h209.32c70.8 0 134.14-51.75 141-122.4 4.74-48.45-16.39-92.06-50.83-119.6zM145.66 112h87.76a48 48 0 0 1 0 96h-87.76zm87.76 288h-87.76V288h87.76a56 56 0 0 1 0 112z" class=""></path></svg></button>
-              <button type="button" class="btn btn-secondary"><svg height="15" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="svg-inline--fa fa-underline fa-w-14 fa-2x"><path fill="currentColor" d="M32 64h32v160c0 88.22 71.78 160 160 160s160-71.78 160-160V64h32a16 16 0 0 0 16-16V16a16 16 0 0 0-16-16H272a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h32v160a80 80 0 0 1-160 0V64h32a16 16 0 0 0 16-16V16a16 16 0 0 0-16-16H32a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16zm400 384H16a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h416a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z" class=""></path></svg></button>
-            </div>
-
-          </div>   -->
             </div>
           </div>
-
+          <div  class="row mobile-only">
+            <div class="col-lg-6 col-sm-12 col-md-12 mx-auto ">
+              <img style="max-width: 100%; width:300px" src="./assets/img/hero2.svg" />
+            </div>
+          </div>
         </div>
       </div>
   </section><!-- End Hero -->
@@ -150,8 +146,10 @@
       <div class="container" data-aos="fade-up">
 
         <div class="section-title">
-          <h2>We Help Developers
+          <h2 class="screen-only">We Help Developers
           </h2>
+          <h1  class="color-primary mobile-only">StyleIt <span> (Beta) </span></h1> 
+
           <div class="row">
 
             <div class="col-lg-6 col-sm-12 col-md-12 mx-auto">
@@ -162,9 +160,9 @@
             </div>
 
           </div>
-          <div class="row">
+          <div class="row ">
             <div class="col-lg-6 col-sm-12 col-md-12 mx-auto ">
-              <img style="max-width: 100%; width:300px" src="./assets/img/hero.svg" />
+              <img style="max-width: 100%; width:300px" src="./assets/img/hero2.svg" />
             </div>
           </div>
         </div>
