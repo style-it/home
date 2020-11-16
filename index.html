@@ -73,19 +73,19 @@
     </nav><!-- .nav-menu -->
   </header><!-- End Header -->
   <div class="header-page aria-hidden screen-only">
-    <div data-rellax-speed="-4" class="squares square1 rellax "></div>
+    <!-- <div data-rellax-speed="-4" class="squares square1 rellax "></div>
     <div data-rellax-speed="-4" class="squares square2 rellax">
     </div>
     <div data-rellax-speed="-4" class="squares square3 rellax">
 
-    </div>
+    </div> -->
     <div data-rellax-speed="-4" class="squares square4 rellax">
 
 
     </div>
-    <div data-rellax-speed="-4" class="squares square5 rellax">
+    <!-- <div data-rellax-speed="-4" class="squares square5 rellax">
 
-    </div>
+    </div> -->
   </div>
 
   <!-- ======= Hero Section ======= -->
@@ -96,8 +96,8 @@
         <div class="col-lg-12 col-md-12 col-sm-12">
 
           <div data-rellax-speed="3" class="rellax " id="top-text-editor">
-            <h1 class="color-primary " style="display: inline;margin-top: 1rem;">StyleIt</h1> <span> (Beta) </span>
-            <p class="mt-5">With super Powers.
+            <h1 class="color-primary font-weight" style="display: inline;margin-top: 1rem;">StyleIt</h1> <span> (Beta) </span>
+            <p class="mt-5">With Superpowers .
             </p>
 
           </div>
@@ -307,7 +307,22 @@
                 <br>
               </code>
             </div>
-
+<br>
+<h2>Block As inline</h2>
+<div class="code-wrapper">
+  <code>
+    import StyelIt from 'styleit-api';
+    <br>
+    const styleIt = new  StyleIt(*Element Object or Element Id*);
+    <br>
+    const changeAlign =(align)=>   styleIt.execCmd('font-weight', 'bold', Modes.Extend,{
+      <br>
+      target:'block', <br>
+      as:'inline'<br>
+      });
+    <br>
+  </code>
+</div>
 
             <table class="table   table-striped">
               <tbody>
@@ -485,18 +500,11 @@
                   </td>
                 </tr>
                 <tr>
-                  <td>Creation </td>
+                  <td>
+                    Code syntax
+                  </td>
                   <td>
                     <ol>
-                      <li>
-                        Tables
-                      </li>
-                      <li>
-                        Images
-                      </li>
-                      <li>
-                        Videos
-                      </li>
                     </ol>
                   </td>
                 </tr>
@@ -528,7 +536,36 @@
 
 
         </div>
-
+  
+        <div class="row mt-5 d-flex flex-row justify-content-center">
+          <!-- Team Member 1 -->
+         
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-0 shadow">
+              <a href="https://lp.webizzart.com/adi/">
+              <div class="card-body text-center">
+                <h5 class="card-title mb-0">Adi L.</h5>
+                <div class="card-text text-black-50">Web Developer</div>
+              </div>
+            </a>
+            </div>
+          </div>
+          <!-- Team Member 2 -->
+          <div class="col-xl-3 col-md-6 mb-4">
+            <div class="card border-0 shadow">
+              <div class="card-body text-center">
+                <h5 class="card-title mb-0">jonathan K.</h5>
+                <div class="card-text text-black-50">Web Developer</div>
+              </div>
+            </div>
+          </div>
+       
+        </div>
+        <div>
+       
+        </div>
+        <!-- /.row -->
+      
       </div>
     </section>
 
