@@ -201,7 +201,7 @@
             <p> Include the module in your application</p>
             <div class="code-wrapper">
               <code>
-                import StyelIt from 'styleit-api';
+                import StyleIt from 'styleit-api';
               </code>
             </div>
 
@@ -219,9 +219,9 @@
             <div>
               <div class="code-wrapper">
                 <code>
-                  import StyelIt from 'styleit-api';
+                  import StyleIt from 'styleit-api';
                   <br>
-                  const styleIt = new  StyleIt(*Element Object or Element Id*);
+                  const styleIt = new StyleIt(*Element Object or Element Id*);
                 </code>
               </div>
               <br>
@@ -230,9 +230,9 @@
             <h2>StyleIt provides two working modes</h2>
             <div class="code-wrapper">
               <code>
-                import StyelIt from 'styleit-api';
+                import StyleIt from 'styleit-api';
                 <br>
-                const styleIt = new  StyleIt(*Element Object or Element Id*);
+                const styleIt = new StyleIt(*Element Object or Element Id*);
                 <br>
                 cont MODES = StyleIt.Modes;
               </code>
@@ -265,13 +265,15 @@
             <p>Modes.Toggle</p>
             <div class="code-wrapper">
               <code>
-                import StyelIt from 'styleit-api';
+                import StyleIt from 'styleit-api';
                 <br>
-                const styleIt = new  StyleIt(*Element Object or Element Id*);
+                const styleIt = new StyleIt(*Element Object or Element Id*);
                 <br>
-                const underline =()=> styleIt.execCmd('text-decoration', 'underline', Modes.Toggle);
+                const MODES = styleIt.Modes;
                 <br>
-                const bold =()=> styleIt.execCmd('font-weight', 'bold', Modes.Toggle);
+                const underline =()=> styleIt.ExecCmd('text-decoration', 'underline', Modes.Toggle);
+                <br>
+                const bold =()=> styleIt.ExecCmd('font-weight', 'bold', MODES.Toggle);
               </code>
             </div>
 
@@ -280,13 +282,15 @@
             <p>Modes.Extend</p>
             <div class="code-wrapper">
               <code>
-                import StyelIt from 'styleit-api';
+                import StyleIt from 'styleit-api';
                 <br>
-                const styleIt = new  StyleIt(*Element Object or Element Id*);
+                const styleIt = new StyleIt(*Element Object or Element Id*);
                 <br>
-                const changeColor =(color)=> styleIt.execCmd('color', color, Modes.Extend);
+                const MODES = styleIt.Modes;
                 <br>
-                const changeSize =(size)=> styleIt.execCmd('font-size', size, Modes.Extend);
+                const changeColor =(color)=> styleIt.ExecCmd('color', color, MODES.Extend);
+                <br>
+                const changeSize =(size)=> styleIt.ExecCmd('font-size', size, MODES.Extend);
               </code>
             </div>
 
@@ -296,11 +300,13 @@
             <h2>With Options</h2>
             <div class="code-wrapper">
               <code>
-                import StyelIt from 'styleit-api';
+                import StyleIt from 'styleit-api';
                 <br>
-                const styleIt = new  StyleIt(*Element Object or Element Id*);
+                const styleIt = new StyleIt(*Element Object or Element Id*);
                 <br>
-                const changeAlign =(align)=>   styleIt.execCmd('text-align', align, Modes.Extend,{
+                const MODES = styleIt.Modes;
+                <br>
+                const changeAlign =(align)=>   styleIt.ExecCmd('text-align', align, MODES.Extend,{
                   <br>
                   target:'block' <br>
                   });
@@ -311,11 +317,13 @@
 <h2>Block As inline</h2>
 <div class="code-wrapper">
   <code>
-    import StyelIt from 'styleit-api';
+    import StyleIt from 'styleit-api';
     <br>
-    const styleIt = new  StyleIt(*Element Object or Element Id*);
+    const styleIt = new StyleIt(*Element Object or Element Id*);
     <br>
-    const changeAlign =(align)=>   styleIt.execCmd('font-weight', 'bold', Modes.Extend,{
+    const MODES = styleIt.Modes;
+    <br>
+    const changeAlign =(align)=>   styleIt.ExecCmd('font-weight', 'bold', MODES.Extend,{
       <br>
       target:'block', <br>
       as:'inline'<br>
@@ -354,11 +362,11 @@
             <h3>How to use</h3>
             <div class="code-wrapper">
               <code>
-                import StyelIt from 'styleit-api';
+                import StyleIt from 'styleit-api';
                 <br>
-                const styleIt = new  StyleIt(*Element Object or Element Id*);
+                const styleIt = new StyleIt(*Element Object or Element Id*);
                 <br>
-                const toggleClass =(name)=> styleIt.ToggleClass(name);
+                const toggleClass = (name)=> styleIt.ToggleClass(name);
                 <br>
               </code>
             </div>
@@ -418,7 +426,7 @@
                   onInspect: (styles) =&gt; {<br>
                     //grab the style<br>
                   },<br>
-                  const styleIt = new  StyleIt(*Element Object or Element Id*,config);
+                  const styleIt = new StyleIt(*Element Object or Element Id*,config);
                 }
               </code>
             </div>
@@ -426,7 +434,7 @@
             <h3>Save Function</h3>
             <div class="code-wrapper">
               <code>
-                  const styleIt = new  StyleIt(*Element Object or Element Id*,config);
+                  const styleIt = new StyleIt(*Element Object or Element Id*,config);
                   <br>
                  const savedContent = styleIt.Save();
               </code>
@@ -436,7 +444,7 @@
             <h3>Load Function</h3>
             <div class="code-wrapper">
               <code>
-                  const styleIt = new  StyleIt(*Element Object or Element Id*,config);
+                  const styleIt = new StyleIt(*Element Object or Element Id*,config);
                   <br>
                   styleIt.Load(savedJson);
               </code>
@@ -450,7 +458,7 @@
 
             <div class="code-wrapper">
               <code>
-                  const styleIt = new  StyleIt(*Element Object or Element Id*,config);
+                  const styleIt = new StyleIt(*Element Object or Element Id*,config);
                   <br>
                   styleIt.Destroy();
               </code>
