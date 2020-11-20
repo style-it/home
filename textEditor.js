@@ -195,7 +195,7 @@ function openEditor() {
                                         tag: "button",
                                         className: "dropdown-item",
                                         innerHTML: "40px",
-                                        onclick: () => StyleIt.ExecCmd("font-size", "32px", StyleIt.Modes.Extend)
+                                        onclick: () => StyleIt.ExecCmd("font-size", "40px", StyleIt.Modes.Extend)
 
                                     },
                                     ,
@@ -203,14 +203,14 @@ function openEditor() {
                                         tag: "button",
                                         className: "dropdown-item",
                                         innerHTML: "42px",
-                                        onclick: () => StyleIt.ExecCmd("font-size", "32px", StyleIt.Modes.Extend)
+                                        onclick: () => StyleIt.ExecCmd("font-size", "42px", StyleIt.Modes.Extend)
 
                                     }, ,
                                     {
                                         tag: "button",
                                         className: "dropdown-item",
                                         innerHTML: "50px",
-                                        onclick: () => StyleIt.ExecCmd("font-size", "32px", StyleIt.Modes.Extend)
+                                        onclick: () => StyleIt.ExecCmd("font-size", "50px", StyleIt.Modes.Extend)
 
                                     }
                                 ]
@@ -486,10 +486,11 @@ function openEditor() {
     const conetnt = createTxtContentModal();
     const config = {
         onKeyPress: [
-            ["b", () => StyleIt.ExecCmd("font-weight", "bold", StyleIt.Modes.Toggle)]
+            ["b", () => StyleIt.ExecCmd("font-weight", "bold", StyleIt.Modes.Toggle,{
+                unWrap:["b"]
+            })]
         ],
         onInspect: (styles) => {
-
             const fontSize = document.getElementById("dd-font-size");
             fontSize.innerHTML = styles["font-size"] || "font size";
             //grab the style
