@@ -1531,17 +1531,22 @@ code .comment, code .comment * {
   position: absolute;
 }
 .font-weight:hover{
-  text-shadow:
-  -1px -1px 0 var(--primary),
-  1px -1px 0 var(--primary),
-  -1px 1px 0 var(--primary),
-  1px 1px 0 var(--primary);
-  -webkit-transition: all .5s;
-  -moz-transition: all .5s;
-  -o-transition: all .5s;
-  transition: all .5s;
-}
+  animation: bold-font .6s ease-in-out !important;
 
+}
+@keyframes bold-font {
+  from {
+    text-shadow:
+    -1px -1px 0 var(--primary),
+    1px -1px 0 var(--primary),
+    -1px 1px 0 var(--primary),
+    1px 1px 0 var(--primary);
+    -webkit-transition: all .5s;
+    -moz-transition: all .5s;
+    -o-transition: all .5s;
+    transition: all .5s;
+  }
+}
 .header-page .squares.square4 {
   height: 100px;
   width: 100px;
