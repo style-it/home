@@ -305,8 +305,7 @@ button {
 
 #hero h1 {
   margin: 0;
-  font-size: 164px;
-  font-weight: 700;
+  font-size: 164px !important;
   line-height: 56px;
   color: #45505b;
   margin-bottom: 78px;
@@ -1354,9 +1353,9 @@ code .comment, code .comment * {
   right: 0;
   top: 0;
   background: #fff;
-  -webkit-box-shadow: -2px 12px 32px -10px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -2px 12px 32px -10px rgba(0, 0, 0, 0.75);
-  box-shadow: -2px 12px 32px -10px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 7px 1px 32px -10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 7px 1px 32px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 7px 1px 32px -10px rgba(0, 0, 0, 0.75);
   animation: slide-from-right .6s ease-in;
   z-index: 12604;
   overflow-y: auto;
@@ -1422,9 +1421,9 @@ code .comment, code .comment * {
   left: 0;
   top: 0;
   background: #fff;
-  -webkit-box-shadow: -2px 12px 32px -10px rgba(0, 0, 0, 0.75);
-  -moz-box-shadow: -2px 12px 32px -10px rgba(0, 0, 0, 0.75);
-  box-shadow: -2px 12px 32px -10px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 7px 1px 32px -10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 7px 1px 32px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 7px 1px 32px -10px rgba(0, 0, 0, 0.75);
   animation: slide-from-bottom .6s ease-in;
   z-index: 11604;
   overflow-y: auto;

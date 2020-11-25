@@ -95,39 +95,87 @@
 
         <div class="col-lg-12 col-md-12 col-sm-12">
 
-          <div data-rellax-speed="3" class="rellax " id="top-text-editor">
-            <h1 class="color-primary font-weight" style="display: inline;margin-top: 1rem;">StyleIt</h1> <span> (Beta) </span>
+          <div id="top-text-editor"  data-rellax-speed="3" class="rellax ">
+            <h1  class="color-primary font-weight" style="display: inline;margin-top: 1rem;"><span style="font-weight:700;">StyleIt</span></h1> <span> (Beta)
+            </span>
             <p class="mt-5">With Super powers .
             </p>
 
           </div>
 
           <div data-rellax-speed="-4" class="rellaxsocial-links mx-auto mt-2 screen-only">
+            <script>
+              const config = {
+                onKeyPress: [
+                  ["b", () => StyleIt.ExecCmd("font-weight", "700", StyleIt.Modes.Toggle, {
+                    unWrap: ["b"]
+                  })]
+                ],
 
+              }
+              debugger
+              var StyleIt = new styleit("top-text-editor", config);
+              setTimeout(() => {
+                var italic = document.getElementById("italic-exec");
+                italic.onclick = () => {
+                  StyleIt.ExecCmd("font-style", "italic", StyleIt.Modes.Toggle)
+                }
+                var bold = document.getElementById("bold-exec");
+                bold.onclick = () => {
+                  StyleIt.ExecCmd("font-weight", "700", StyleIt.Modes.Toggle)
+                }
+                var italic = document.getElementById("italic-exec");
+                italic.onclick = () => {
+                  StyleIt.ExecCmd("font-style", "italic", StyleIt.Modes.Toggle)
+                }
+                var underline = document.getElementById("underline-exec");
+                underline.onclick = () => {
+                  StyleIt.ExecCmd("text-decoration", "underline", StyleIt.Modes.Toggle)
+                }
+                var strikethrough = document.getElementById("strikethrough-exec");
+                strikethrough.onclick = () => {
+                  StyleIt.ExecCmd("text-decoration", "line-through", StyleIt.Modes.Toggle)
+                }
+                var px = document.getElementById("px-font-size-exec");
+                px.onclick = () => {
+                  StyleIt.ExecCmd("font-size", "30px", StyleIt.Modes.Extend)
+                }
+                var rem = document.getElementById("rem-font-size-exec");
+                rem.onclick = () => {
+                  StyleIt.ExecCmd("font-size", "4rem", StyleIt.Modes.Extend)
+                }
+                var em = document.getElementById("em-font-size-exec");
+                em.onclick = () => {
+                  StyleIt.ExecCmd("font-size", "1em", StyleIt.Modes.Extend)
+                }
+              }, 0);
+            </script>
             <div class="text-editor mx-auto ">
-              <button class="text-editor-button">
+              <button id="bold-exec"  class="text-editor-button">
                 <i class="fas fa-bold"></i>
               </button>
-              <button class="text-editor-button">
+              <button id="italic-exec" class="text-editor-button">
                 <i class="fas fa-italic"></i>
               </button>
-              <button class="text-editor-button">
-                <i class="fas fa-strikethrough"></i>
-              </button>
-              <button class="text-editor-button">
+              <button id="underline-exec" class="text-editor-button">
                 <i class="fas fa-underline"></i>
               </button>
+              <button id="strikethrough-exec" class="text-editor-button">
+                <i class="fas fa-strikethrough"></i>
+              </button>
+          
               <div class="seperator"></div>
-              <button class="text-editor-button">
-                <i class="fas fa-align-left"></i>
-              </button>
-              <button class="text-editor-button">
-                <i class="fas fa-align-center"></i>
-              </button>
-              <button class="text-editor-button">
-                <i class="fas fa-align-right"></i>
-              </button>
-              <div class="seperator"></div>
+             
+              <span class="dropdown">
+                <button class="btn btn-light dropdown-toggle text-editor-button" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  <svg stroke="currentColor" fill="currentColor" stroke-width="0" version="1.1" viewBox="0 0 16 16" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><path d="M1 8h6v2h-2v6h-2v-6h-2zM15 4h-3.934v12h-2.133v-12h-3.934v-2h10z"></path></svg>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" id="px-font-size-exec" href="#">30px</a>
+                  <a class="dropdown-item" id="rem-font-size-exec"  href="#">4rem</a>
+                  <a class="dropdown-item" id="em-font-size-exec"  href="#">1em</a>
+                </div>
+              </span>
 
             </div>
           </div>
@@ -171,7 +219,7 @@
       </div>
     </section><!-- End About Section -->
 
-   
+
     <section id="playground" class="styleIt">
       <div class="container" data-aos="fade-up">
 
@@ -313,10 +361,10 @@
                 <br>
               </code>
             </div>
-<br>
-<h2>Block As inline</h2>
-<div class="code-wrapper">
-  <code>
+            <br>
+            <h2>Block As inline</h2>
+            <div class="code-wrapper">
+              <code>
     import StyleIt from 'styleit-api';
     <br>
     const styleIt = new StyleIt(*Element Object or Element Id*);
@@ -330,7 +378,7 @@
       });
     <br>
   </code>
-</div>
+            </div>
 
             <table class="table   table-striped">
               <tbody>
@@ -352,7 +400,9 @@
                 <tr>
                   <td>unWrap</td>
                   <td>{unWrap:["b","strong"]}</td>
-                  <td>Will unwrap as the selectors  ref: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">querySelector</a></td>
+                  <td>Will unwrap as the selectors ref: <a
+                      href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">querySelector</a>
+                  </td>
                 </tr>
                 <tr>
                   <td>Selection</td>
@@ -480,7 +530,7 @@
 
       </div>
     </section>
-    <section  data-aos="fade-up" id="roadmaps">
+    <section data-aos="fade-up" id="roadmaps">
       <div class="container">
         <div class="section-title">
           <h2>Roadmaps
@@ -522,7 +572,7 @@
                 </tr>
                 <tr>
                   <td>
-                    Unit test 
+                    Unit test
                   </td>
                   <td>
                     <ol>
@@ -557,23 +607,23 @@
 
 
         </div>
-  
+
         <div class="row mt-5 d-flex flex-row justify-content-center">
           <!-- Team Member 1 -->
-         <div class="col-12">
-          <div class="section-title mt-5">
-            <h2>Contributors
-            </h2>
+          <div class="col-12">
+            <div class="section-title mt-5">
+              <h2>Contributors
+              </h2>
+            </div>
           </div>
-         </div>
           <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-0 shadow">
               <a href="https://lp.webizzart.com/adi/">
-              <div class="card-body text-center">
-                <h5 class="card-title mb-0">Adi L. 🐱‍👓</h5>
-                <div class="card-text text-black-50">Contributions: ideas, code, doc, question, review</div>
-              </div>
-            </a>
+                <div class="card-body text-center">
+                  <h5 class="card-title mb-0">Adi L. 🐱‍👓</h5>
+                  <div class="card-text text-black-50">Contributions: ideas, code, doc, question, review</div>
+                </div>
+              </a>
             </div>
           </div>
           <!-- Team Member 2 -->
@@ -588,20 +638,20 @@
           <div class="col-xl-3 col-md-6 mb-4">
             <div class="card border-0 shadow">
               <a href="https://eldadzzipori.com/">
-              <div class="card-body text-center">
-                <h5 class="card-title mb-0">Eldad Z. 🐱‍🚀</h5>
-                <div class="card-text text-black-50">Contributions: ideas, doc, example</div>
-              </div>
-            </a>
+                <div class="card-body text-center">
+                  <h5 class="card-title mb-0">Eldad Z. 🐱‍🚀</h5>
+                  <div class="card-text text-black-50">Contributions: ideas, doc, example</div>
+                </div>
+              </a>
             </div>
           </div>
-       
+
         </div>
         <div>
-       
+
         </div>
         <!-- /.row -->
-      
+
       </div>
     </section>
 
