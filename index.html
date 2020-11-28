@@ -116,14 +116,23 @@
           <div data-rellax-speed="-4" class="rellaxsocial-links mx-auto mt-2 screen-only">
             <script>
               const config = {
+                global:true,
                 onKeyPress: [
-                  ["b", () => StyleIt.ExecCmd("font-weight", "700", StyleIt.Modes.Toggle, {
+                  [
+                    66, () => StyleIt.ExecCmd("font-weight", "700", StyleIt.Modes.Toggle, {
                     unWrap: ["b"]
-                  })]
+                  }),
+                  85, () => StyleIt.ExecCmd("text-decoration", "underline", StyleIt.Modes.Toggle, {
+                    unWrap: ["u"]
+                  }),
+                  73, () => StyleIt.ExecCmd("font-style", "italic", StyleIt.Modes.Toggle, {
+                    unWrap: ["i"]
+                  })
+                ]
                 ],
 
               }
-              debugger
+              
               var StyleIt = new styleit("top-text-editor", config);
               setTimeout(() => {
                 var italic = document.getElementById("italic-exec");
@@ -555,20 +564,21 @@
                   <th scope="col">Description</th>
                 </tr>
                 <tr>
-                  <td>Undo redo</td>
-                  <td></td>
+                  <td>
+                    Unit test
+                  </td>
+                  <td>
+                    <ol>
+                    </ol>
+                  </td>
                 </tr>
+              
                 <tr>
                   <td>Paste</td>
                   <td>
-                    <ol>
-                      <li>
+                   
                         with formatting
-                      </li>
-                      <li>
-                        tables
-                      </li>
-                    </ol>
+                   
                   </td>
                 </tr>
                 <tr>
@@ -582,12 +592,17 @@
                 </tr>
                 <tr>
                   <td>
-                    Unit test
+                    Links API
                   </td>
                   <td>
                     <ol>
+                      A tag
                     </ol>
                   </td>
+                </tr>
+                <tr>
+                  <td>Undo redo</td>
+                  <td></td>
                 </tr>
               </tbody>
             </table>
