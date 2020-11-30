@@ -444,7 +444,47 @@
                 <br>
               </code>
             </div>
+            <h2>Links</h2>
+            <div class="code-wrapper">
+              <code>
+    import StyleIt from 'styleit-api';
+    <br>
+    const styleIt = new StyleIt(*Element Object or Element Id*);
+    <br>
+    <br>
+    const changeAlign =(align)=>   styleIt.Link({
+      <br>
+      href:'styleIt.com', <br>
+      protocol:'https'<br>
+      });
+    <br>
+  </code>
+            </div>
 
+            <table class="table   table-striped">
+              <tbody>
+                <tr>
+                  <th scope="col">Protocols</th>
+                  <th scope="col">target</th>
+                </tr>
+                <tr>
+                  <td>mailto</td>
+                  <td>_blank</td>
+                </tr>
+                <tr>
+                  <td>tel</td>
+                  <td>_self</td>
+                </tr>
+                <tr>
+                  <td>http</td>
+                  <td>_top</td>
+                </tr>
+                <tr>
+                  <td>https</td>
+                  <td>_parent</td>
+                </tr>
+              </tbody>
+            </table>
             <h2>API Tools</h2>
             <table class="table   table-striped">
               <tbody>
@@ -455,14 +495,26 @@
                 </tr>
                 <tr>
                   <td>Undo Redo</td>
-                  <td>None</td>
+                  <td></td>
                   <td>Coming soon!</td>
+                </tr>
+                <tr>
+                  <td>Links using A tag</td>
+                  <td></td>
+                  <td>
+                    StyleIt.Link({
+                      href:"styleit.com",
+                      protocol:"mailto"
+                    });
+                    <br>
+                    StyleIt.UnLink();
+                  </td>
                 </tr>
                 <tr>
                   <td>Keyboard</td>
                   <td> const config = {<br>
                     onKeyPress:[ <br>
-                    ["b",()=> StyleIt.ExecCmd("font-weight", "bold", StyleIt.Modes.Toggle)]<br>
+                    [keyCode,()=> StyleIt.ExecCmd("font-weight", "bold", StyleIt.Modes.Toggle)]<br>
                     ],<br>
                     }
                     <br>
