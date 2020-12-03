@@ -99,13 +99,14 @@
   </div>
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero" class="d-flex flex-column justify-content-center screen-only">
+  <section id="hero" class="d-flex flex-column justify-content-center">
     <div class="container" data-aos="zoom-in" data-aos-delay="100">
       <div style="text-align: center;" class="row">
 
         <div class="col-lg-12 col-md-12 col-sm-12">
 
-          <div id="top-text-editor"  data-rellax-speed="3" class="rellax ">
+          <div id="top-text-edito
+          top-text-editor"  data-rellax-speed="3" class="rellax ">
             <h1  class="color-primary font-weight" style="display: inline;margin-top: 1rem;"><span style="font-weight:700;">StyleIt</span></h1> <span> (Beta)
             </span>
             <p class="mt-5">With Super powers .
@@ -113,7 +114,7 @@
 
           </div>
 
-          <div data-rellax-speed="-4" class="rellaxsocial-links mx-auto mt-2 screen-only">
+          <div data-rellax-speed="-4" class="rellaxsocial-links mx-auto mt-2 ">
             <script>
               const config = {
                 global:true,
@@ -198,11 +199,7 @@
 
             </div>
           </div>
-          <div class="row mobile-only">
-            <div class="col-lg-6 col-sm-12 col-md-12 mx-auto ">
-              <img style="max-width: 100%; width:300px" src="./assets/img/hero2.svg" />
-            </div>
-          </div>
+       
         </div>
       </div>
   </section><!-- End Hero -->
@@ -216,7 +213,6 @@
         <div class="section-title">
           <h2 class="screen-only">We Help Developers
           </h2>
-          <h1 class="color-primary mobile-only">StyleIt <span> (Beta) </span></h1>
 
           <div class="row">
 
@@ -532,14 +528,13 @@
                 </tr>
                 <tr>
                   <td>Inspector</td>
-                  <td> const config = {<br>
-                    onInspect: (styles) =&gt; {<br>
-                    // the styles on the element..<br>
-                    },<br>
-                    }
-                    <br>
+                  <td>
                     const styleIt = new StyleIt(*Element Object or Element Id*,config);
-                    }
+                    <br>
+                    styleIt.On("inspect",(collectedStyles) => { <br>
+                      // do something with the styles.. <br>
+                    }) <br>
+                    } 
                   </td>
                   <td> The inspector will trigger your function on every style change with the style in a key-value
                     format.
@@ -550,15 +545,34 @@
             <h2>Inspector</h2>
             <div class="code-wrapper">
               <code>
-                  const config = {<br>
-                  onInspect: (styles) =&gt; {<br>
-                    //grab the style<br>
-                  },<br>
-                  const styleIt = new StyleIt(*Element Object or Element Id*,config);
-                }
+                  const styleIt = new StyleIt(*Element Object or Element Id*,config);<br>
+                  styleIt.On("inspect",(collectedStyles) => { <br>
+                    // do something with the styles.. <br>
+                  }) <br>
+                  } 
               </code>
             </div>
             <br>
+            <h3>Inspect Link</h3>
+            <div class="code-wrapper">
+              <code>
+                  const styleIt = new StyleIt(*Element Object or Element Id*,config);<br>
+                  styleIt.On("inspectLink",(link) => { <br>
+                    // {href,protocl,target,element} <br>
+                  }) <br>
+                  } 
+              </code>
+            </div>
+            <h3>On Paste</h3>
+            <div class="code-wrapper">
+              <code>
+                  const styleIt = new StyleIt(*Element Object or Element Id*,config);<br>
+                  styleIt.On("paste",(html) => { <br>
+                     <br>
+                  }) <br>
+                  } 
+              </code>
+            </div>
             <h3>Save Function</h3>
             <div class="code-wrapper">
               <code>

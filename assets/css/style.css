@@ -16,6 +16,7 @@
   .mobile-only {
     display: block;
   }
+ 
 }
 
 .by-creators {
@@ -305,7 +306,7 @@ button {
 
 #hero h1 {
   margin: 0;
-  font-size: 164px !important;
+  font-size: 164px ;
   line-height: 56px;
   color: #45505b;
   margin-bottom: 78px;
@@ -345,7 +346,7 @@ button {
     text-align: center;
   }
   #hero h1 {
-    font-size: 32px;
+    font-size: 82px;
     line-height: 36px;
   }
   #hero p {
