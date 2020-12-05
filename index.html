@@ -120,13 +120,13 @@
                 global:true,
                 onKeyPress: [
                   [
-                    66, () => StyleIt.ExecCmd("font-weight", "700", StyleIt.Modes.Toggle, {
+                    66, () => styleIt.execCmd("font-weight", "700", StyleIt.MODES.Toggle, {
                     unWrap: ["b"]
                   }),
-                  85, () => StyleIt.ExecCmd("text-decoration", "underline", StyleIt.Modes.Toggle, {
+                  85, () => styleIt.execCmd("text-decoration", "underline", StyleIt.MODES.Toggle, {
                     unWrap: ["u"]
                   }),
-                  73, () => StyleIt.ExecCmd("font-style", "italic", StyleIt.Modes.Toggle, {
+                  73, () => styleIt.execCmd("font-style", "italic", StyleIt.MODES.Toggle, {
                     unWrap: ["i"]
                   })
                 ]
@@ -138,35 +138,35 @@
               setTimeout(() => {
                 var italic = document.getElementById("italic-exec");
                 italic.onclick = () => {
-                  StyleIt.ExecCmd("font-style", "italic", StyleIt.Modes.Toggle)
+                  styleIt.execCmd("font-style", "italic", StyleIt.MODES.Toggle)
                 }
                 var bold = document.getElementById("bold-exec");
                 bold.onclick = () => {
-                  StyleIt.ExecCmd("font-weight", "700", StyleIt.Modes.Toggle)
+                  styleIt.execCmd("font-weight", "700", StyleIt.MODES.Toggle)
                 }
                 var italic = document.getElementById("italic-exec");
                 italic.onclick = () => {
-                  StyleIt.ExecCmd("font-style", "italic", StyleIt.Modes.Toggle)
+                  styleIt.execCmd("font-style", "italic", StyleIt.MODES.Toggle)
                 }
                 var underline = document.getElementById("underline-exec");
                 underline.onclick = () => {
-                  StyleIt.ExecCmd("text-decoration", "underline", StyleIt.Modes.Toggle)
+                  styleIt.execCmd("text-decoration", "underline", StyleIt.MODES.Toggle)
                 }
                 var strikethrough = document.getElementById("strikethrough-exec");
                 strikethrough.onclick = () => {
-                  StyleIt.ExecCmd("text-decoration", "line-through", StyleIt.Modes.Toggle)
+                  styleIt.execCmd("text-decoration", "line-through", StyleIt.MODES.Toggle)
                 }
                 var px = document.getElementById("px-font-size-exec");
                 px.onclick = () => {
-                  StyleIt.ExecCmd("font-size", "30px", StyleIt.Modes.Extend)
+                  styleIt.execCmd("font-size", "30px", StyleIt.MODES.Extend)
                 }
                 var rem = document.getElementById("rem-font-size-exec");
                 rem.onclick = () => {
-                  StyleIt.ExecCmd("font-size", "4rem", StyleIt.Modes.Extend)
+                  styleIt.execCmd("font-size", "4rem", StyleIt.MODES.Extend)
                 }
                 var em = document.getElementById("em-font-size-exec");
                 em.onclick = () => {
-                  StyleIt.ExecCmd("font-size", "1em", StyleIt.Modes.Extend)
+                  styleIt.execCmd("font-size", "1em", StyleIt.MODES.Extend)
                 }
               }, 0);
             </script>
@@ -297,7 +297,7 @@
                 <br>
                 const styleIt = new StyleIt(*Element Object or Element Id*);
                 <br>
-                cont MODES = StyleIt.Modes;
+                cont MODES = StyleIt.MODES;
               </code>
             </div>
 
@@ -332,11 +332,11 @@
                 <br>
                 const styleIt = new StyleIt(*Element Object or Element Id*);
                 <br>
-                const MODES = styleIt.Modes;
+                const MODES = StyleIt.MODES;
                 <br>
-                const underline =()=> styleIt.ExecCmd('text-decoration', 'underline', Modes.Toggle);
+                const underline =()=> styleIt.execCmd('text-decoration', 'underline', Modes.Toggle);
                 <br>
-                const bold =()=> styleIt.ExecCmd('font-weight', 'bold', MODES.Toggle);
+                const bold =()=> styleIt.execCmd('font-weight', 'bold', MODES.Toggle);
               </code>
             </div>
 
@@ -349,11 +349,11 @@
                 <br>
                 const styleIt = new StyleIt(*Element Object or Element Id*);
                 <br>
-                const MODES = styleIt.Modes;
+                const MODES = StyleIt.MODES;
                 <br>
-                const changeColor =(color)=> styleIt.ExecCmd('color', color, MODES.Extend);
+                const changeColor =(color)=> styleIt.execCmd('color', color, MODES.Extend);
                 <br>
-                const changeSize =(size)=> styleIt.ExecCmd('font-size', size, MODES.Extend);
+                const changeSize =(size)=> styleIt.execCmd('font-size', size, MODES.Extend);
               </code>
             </div>
 
@@ -367,9 +367,9 @@
                 <br>
                 const styleIt = new StyleIt(*Element Object or Element Id*);
                 <br>
-                const MODES = styleIt.Modes;
+                const MODES = StyleIt.MODES;
                 <br>
-                const changeAlign =(align)=>   styleIt.ExecCmd('text-align', align, MODES.Extend,{
+                const changeAlign =(align)=>   styleIt.execCmd('text-align', align, MODES.Extend,{
                   <br>
                   target:'block' <br>
                   });
@@ -384,9 +384,9 @@
     <br>
     const styleIt = new StyleIt(*Element Object or Element Id*);
     <br>
-    const MODES = styleIt.Modes;
+    const MODES = StyleIt.MODES;
     <br>
-    const changeAlign =(align)=>   styleIt.ExecCmd('font-weight', 'bold', MODES.Extend,{
+    const changeAlign =(align)=>   styleIt.execCmd('font-weight', 'bold', MODES.Extend,{
       <br>
       target:'block', <br>
       as:'inline'<br>
@@ -448,10 +448,11 @@
     const styleIt = new StyleIt(*Element Object or Element Id*);
     <br>
     <br>
-    const changeAlign =(align)=>   styleIt.Link({
+    const createLink =()=>  styleIt.link({
       <br>
       href:'styleIt.com', <br>
       protocol:'https'<br>
+      target:'_blank'<br>
       });
     <br>
   </code>
@@ -498,19 +499,20 @@
                   <td>Links using A tag</td>
                   <td></td>
                   <td>
-                    StyleIt.Link({
+                    styleIt.link({
                       href:"styleit.com",
-                      protocol:"mailto"
+                      protocol:"mailto",
+                      target:'_blank'
                     });
                     <br>
-                    StyleIt.UnLink();
+                    StyleIt.unLink();
                   </td>
                 </tr>
                 <tr>
                   <td>Keyboard</td>
                   <td> const config = {<br>
                     onKeyPress:[ <br>
-                    [keyCode,()=> StyleIt.ExecCmd("font-weight", "bold", StyleIt.Modes.Toggle)]<br>
+                    [keyCode,()=> styleIt.execCmd("font-weight", "bold", StyleIt.MODES.Toggle)]<br>
                     ],<br>
                     }
                     <br>
@@ -578,7 +580,7 @@
               <code>
                   const styleIt = new StyleIt(*Element Object or Element Id*,config);
                   <br>
-                 const savedContent = styleIt.Save();
+                 const savedContent = styleIt.save();
               </code>
             </div>
             <h6>Will create a clean JSON from your content.
@@ -588,7 +590,7 @@
               <code>
                   const styleIt = new StyleIt(*Element Object or Element Id*,config);
                   <br>
-                  styleIt.Load(savedJson);
+                  styleIt.load(savedJson);
               </code>
             </div>
             <h6></h6>
@@ -602,7 +604,7 @@
               <code>
                   const styleIt = new StyleIt(*Element Object or Element Id*,config);
                   <br>
-                  styleIt.Destroy();
+                  styleIt.destroy();
               </code>
             </div>
 
