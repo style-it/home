@@ -434,7 +434,7 @@ function openEditor() {
                                 tag: "button",
                                 className: "btn btn-light",
                                 innerHTML: `<i class="fas fa-heading text-custom"></i>`,
-                                onclick: () => _styleIt.ToggleClass("text-custom")
+                                onclick: () => _styleIt.toggleClass("text-custom")
                             },
                         ]
                     }

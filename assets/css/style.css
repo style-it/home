@@ -320,7 +320,6 @@ button {
 }
 
 #hero p span {
-  color: var(--third);
   letter-spacing: 1px;
 }
 
@@ -1561,4 +1560,14 @@ code .comment, code .comment * {
   opacity: .5;
   left: 32%;
   bottom: 29%;
+}
+
+.custom-underline::after {
+  content: a;
+  top: 65%;
+  height: 2px !important;
+  width: 40%;
+  left: 30%;
+  background-color: rgba(255, 255, 255, 0.6);
+    transition: 0.4s ease-out all .1s;
 }

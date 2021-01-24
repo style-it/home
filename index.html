@@ -105,11 +105,11 @@
 
         <div class="col-lg-12 col-md-12 col-sm-12">
 
-          <div id="top-text-edito
-          top-text-editor"  data-rellax-speed="3" class="rellax ">
+          <div id="top-text-editor" contenteditable="" translate="no" spellcheck="false" onkeydown="return false;" data-rellax-speed="3" class="rellax ">
             <h1  class="color-primary font-weight" style="display: inline;margin-top: 1rem;"><span style="font-weight:700;">StyleIt</span></h1> <span> (Beta)
             </span>
-            <p class="mt-5">With Super powers .
+            <p class="mt-5">
+              <span style="color: #45505b;font-size:26px;">With Super powers .</span>
             </p>
 
           </div>
@@ -134,39 +134,39 @@
 
               }
               
-              var StyleIt = new styleit("top-text-editor", config);
+              var _styleIt = new styleit("top-text-editor", config);
               setTimeout(() => {
                 var italic = document.getElementById("italic-exec");
                 italic.onclick = () => {
-                  styleIt.execCmd("font-style", "italic", StyleIt.MODES.Toggle)
+                  _styleIt.execCmd("font-style", "italic", _styleIt.MODES.Toggle)
                 }
                 var bold = document.getElementById("bold-exec");
                 bold.onclick = () => {
-                  styleIt.execCmd("font-weight", "700", StyleIt.MODES.Toggle)
+                  _styleIt.execCmd("font-weight", "700", _styleIt.MODES.Toggle)
                 }
                 var italic = document.getElementById("italic-exec");
                 italic.onclick = () => {
-                  styleIt.execCmd("font-style", "italic", StyleIt.MODES.Toggle)
+                  _styleIt.execCmd("font-style", "italic", _styleIt.MODES.Toggle)
                 }
                 var underline = document.getElementById("underline-exec");
                 underline.onclick = () => {
-                  styleIt.execCmd("text-decoration", "underline", StyleIt.MODES.Toggle)
+                  _styleIt.execCmd("text-decoration", "underline", _styleIt.MODES.Toggle)
                 }
                 var strikethrough = document.getElementById("strikethrough-exec");
                 strikethrough.onclick = () => {
-                  styleIt.execCmd("text-decoration", "line-through", StyleIt.MODES.Toggle)
+                  _styleIt.execCmd("text-decoration", "line-through", _styleIt.MODES.Toggle)
                 }
                 var px = document.getElementById("px-font-size-exec");
                 px.onclick = () => {
-                  styleIt.execCmd("font-size", "30px", StyleIt.MODES.Extend)
+                  _styleIt.execCmd("font-size", "30px", _styleIt.MODES.Extend)
                 }
                 var rem = document.getElementById("rem-font-size-exec");
                 rem.onclick = () => {
-                  styleIt.execCmd("font-size", "4rem", StyleIt.MODES.Extend)
+                  _styleIt.execCmd("font-size", "4rem", _styleIt.MODES.Extend)
                 }
                 var em = document.getElementById("em-font-size-exec");
                 em.onclick = () => {
-                  styleIt.execCmd("font-size", "1em", StyleIt.MODES.Extend)
+                  _styleIt.execCmd("font-size", "1em", _styleIt.MODES.Extend)
                 }
               }, 0);
             </script>
