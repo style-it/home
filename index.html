@@ -380,8 +380,20 @@
                   });
                 <br>
               </code>
+              
             </div>
             <br>
+            <h3>Result:</h3>
+            &#60;p style="text-align='center'"&#62; <br/>
+            &#60;span &#62; <br/>
+           only blocks like P will be effected <br/>
+            &#60;/span&#62; <br/>
+            &#60;/p&#62; <br/>
+            <br>
+            <br>  
+            <br>
+            <br>  
+                    
             <h2>Block As inline</h2>
             <div class="code-wrapper">
               <code>
@@ -397,9 +409,24 @@
       as:'inline'<br>
       });
     <br>
+   
   </code>
-            </div>
+  <br>
+  <br>  
 
+
+            </div>
+            <h3>Result:</h3>
+            &#60;p&#62; <br/>
+            &#60;span style="font-weight='bold'"&#62; <br/>
+            all the text inside the p tag will be effected <br/>
+            &#60;/span&#62; <br/>
+            &#60;/p&#62; <br/>
+            <br>
+            <br>  
+            <br>
+            <br>  
+                    
             <table class="table   table-striped">
               <tbody>
                 <tr>
@@ -411,6 +438,7 @@
                   <td>Target</td>
                   <td>{target:'block'}</td>
                   <td>Will apply on the closest P or DIV tag element</td>
+             
                 </tr>
                 <tr>
                   <td>as</td>
@@ -445,6 +473,18 @@
                 <br>
               </code>
             </div>
+            <br>
+            <h3>Result:</h3>
+            &#60;p&#62; <br/>
+            &#60;span class="example"&#62; <br/>
+           the className will be wrapped the selected texts<br/>
+            &#60;/span&#62; <br/>
+            &#60;/p&#62; <br/>
+            <br>
+            <br>  
+            <br>
+            <br>  
+                  
             <h2>Links</h2>
             <div class="code-wrapper">
               <code>
@@ -461,8 +501,20 @@
       });
     <br>
   </code>
+  
             </div>
-
+            <br>
+            <h3>Result:</h3>
+            &#60;p&#62; <br/>
+            &#60;a src="https://styleit.com" target="_blank"&#62; <br/>
+           the selected texts will be wrapped with a tag<br/>
+            &#60;/a&#62; <br/>
+            &#60;/p&#62; <br/>
+            <br>
+            <br>  
+            <br>
+            <br>  
+                  
             <table class="table   table-striped">
               <tbody>
                 <tr>
@@ -515,15 +567,8 @@
                 </tr>
                 <tr>
                   <td>Keyboard</td>
-                  <td> const config = {<br>
-                    onKeyPress:[ <br>
-                    [keyCode,()=> styleIt.execCmd("font-weight", "bold", StyleIt.MODES.Toggle)]<br>
-                    ],<br>
-                    }
-                    <br>
-                    const styleIt = new StyleIt(*Element Object or Element Id*,config);</td>
+                  <td> </td>
                   <td>
-                    The first item will be the key name and the second will be the function.
                   </td>
                 </tr>
                 <tr>
@@ -559,6 +604,13 @@
                   } 
               </code>
             </div>
+            <br/>
+            <h3>Result:</h3>
+            { <br/>
+              color:"red", <br/>
+              text-align:"center", <br/>
+              font-weight:"700" <br/>
+            } <br/> 
             <br>
             <h3>Inspect Link</h3>
             <div class="code-wrapper">
@@ -570,7 +622,7 @@
                   } 
               </code>
             </div>
-            <h3>On Paste</h3>
+            <!-- <h3>On Paste</h3>
             <div class="code-wrapper">
               <code>
                   const styleIt = new StyleIt(*Element Object or Element Id*,config);<br>
@@ -579,7 +631,7 @@
                   }) <br>
                   } 
               </code>
-            </div>
+            </div> -->
             <h3>Save Function</h3>
             <div class="code-wrapper">
               <code>
