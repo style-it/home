@@ -87,25 +87,25 @@ function openEditor() {
                             title: "Bold",
                             "data-toggle": "tooltip"
                         },
-                        onclick: () => _styleIt.execCmd("font-weight", "bold", _styleIt.MODES.toggle)
+                        onclick: () => _styleIt.execCmd("font-weight", "bold", _styleIt.MODES.Toggle)
                     },
                     {
                         tag: "button",
                         className: "btn btn-light",
                         innerHTML: ` <i class="fas fa-italic"></i>`,
-                        onclick: () => _styleIt.execCmd("font-style", "italic", _styleIt.MODES.toggle)
+                        onclick: () => _styleIt.execCmd("font-style", "italic", _styleIt.MODES.Toggle)
                     },
                     {
                         tag: "button",
                         className: "btn btn-light",
                         innerHTML: `<i class="fas fa-underline"></i>`,
-                        onclick: () => _styleIt.execCmd("text-decoration", "underline", _styleIt.MODES.toggle)
+                        onclick: () => _styleIt.execCmd("text-decoration", "underline", _styleIt.MODES.Toggle)
                     },
                     {
                         tag: "button",
                         className: "btn btn-light",
                         innerHTML: ` <i class="fas fa-strikethrough"></i>`,
-                        onclick: () => _styleIt.execCmd("text-decoration", "line-through", _styleIt.MODES.toggle)
+                        onclick: () => _styleIt.execCmd("text-decoration", "line-through", _styleIt.MODES.Toggle)
                     },
 
                 ]
@@ -386,9 +386,9 @@ function openEditor() {
                                 id: "line-height-control",
                                 attrs: {
                                     type: "range",
-                                    max: 120, min: 10
+                                    max: 5, min: 1,step:.1,value:1.2
                                 },
-                                oninput: (e) => _styleIt.execCmd("line-height", e.target.value + "px", _styleIt.MODES.Extend, {
+                                oninput: (e) => _styleIt.execCmd("line-height", e.target.value , _styleIt.MODES.Extend, {
                                     target: "block"
                                 })
                             },
@@ -494,32 +494,38 @@ function openEditor() {
         },
     }
     var _styleIt = new styleit(conetnt, config);
+    var collectedStyles = {};
+    _styleIt.on('inspect',(styles)=>{
+        collectedStyles = styles
+    })
     document.addEventListener("keydown", function (event) {
 
         var isDetect = false;
         if (event.ctrlKey) {
+            console.log(event.code)
             switch (event.code){
                 case "KeyB":
                     isDetect = true;
-                    _styleIt.execCmd("font-weight", "bold", _styleIt.MODES.toggle)
+                    
+                    _styleIt.execCmd("font-weight", "bold", _styleIt.MODES.Toggle)
                     break;
                     case "KeyS":
                     isDetect = true;
-                    _styleIt.execCmd("text-decoration", "line-through", _styleIt.MODES.toggle)
+                    _styleIt.execCmd("text-decoration", "line-through", _styleIt.MODES.Toggle)
                     break;
                     case "KeyU":
                         isDetect = true;
 
-                        _styleIt.execCmd("text-decoration", "underline", _styleIt.MODES.toggle)
+                        _styleIt.execCmd("text-decoration", "underline", _styleIt.MODES.Toggle)
                     break;
                     case "KeyI":
                         isDetect = true;
-                        _styleIt.execCmd("font-style", "italic", _styleIt.MODES.toggle)
+                        _styleIt.execCmd("font-style", "italic", _styleIt.MODES.Toggle)
                     break;
+                  
             }
             if(isDetect){
                 event.preventDefault(); 
-                event.stopPropagation();
             }
         }
         else {
