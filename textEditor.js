@@ -461,6 +461,8 @@ function openEditor() {
     const createTxtContentModal = () => {
         const conetnt = document.createElement("div");
         conetnt.contentEditable = "true";
+        conetnt.spellcheck = false;
+        conetnt.translate = false;
         conetnt.className = "editor-conetnt--example";
         conetnt.id = "text-editor--root";
         conetnt.innerHTML = `
@@ -485,11 +487,6 @@ function openEditor() {
     }
     const conetnt = createTxtContentModal();
     const config = {
-        onKeyPress: [
-            ["b", () => _styleIt.execCmd("font-weight", "bold", _styleIt.MODES.toggle,{
-                unWrap:["b"]
-            })]
-        ],
         onInspect: (styles) => {
             const fontSize = document.getElementById("dd-font-size");
             fontSize.innerHTML = styles["font-size"] || "font size";
@@ -497,7 +494,38 @@ function openEditor() {
         },
     }
     var _styleIt = new styleit(conetnt, config);
-    console.log(_styleIt);
+    document.addEventListener("keydown", function (event) {
+
+        var isDetect = false;
+        if (event.ctrlKey) {
+            switch (event.code){
+                case "KeyB":
+                    isDetect = true;
+                    _styleIt.execCmd("font-weight", "bold", _styleIt.MODES.toggle)
+                    break;
+                    case "KeyS":
+                    isDetect = true;
+                    _styleIt.execCmd("text-decoration", "line-through", _styleIt.MODES.toggle)
+                    break;
+                    case "KeyU":
+                        isDetect = true;
+
+                        _styleIt.execCmd("text-decoration", "underline", _styleIt.MODES.toggle)
+                    break;
+                    case "KeyI":
+                        isDetect = true;
+                        _styleIt.execCmd("font-style", "italic", _styleIt.MODES.toggle)
+                    break;
+            }
+            if(isDetect){
+                event.preventDefault(); 
+                event.stopPropagation();
+            }
+        }
+        else {
+            console.log("Something else was pressed.");
+        }
+    });
     setTimeout(() => {
         createDrawer(_styleIt);
     }, 600);
