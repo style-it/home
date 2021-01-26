@@ -436,6 +436,12 @@ function openEditor() {
                                 innerHTML: `<i class="fas fa-heading text-custom"></i>`,
                                 onclick: () => _styleIt.toggleClass("text-custom")
                             },
+                            {
+                                tag: "button",
+                                className: "btn btn-light",
+                                innerHTML: `<i class="fas fa-underline "></i>`,
+                                onclick: () => _styleIt.toggleClass("custom-underline")
+                            },
                         ]
                     }
                 ]
