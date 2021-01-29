@@ -72,7 +72,7 @@
   <header id="header" class="d-flex flex-column justify-content-center">
 
     <nav class="nav-menu ">
-      <ul>
+      <ul>  
         <li class="active"><a href="#hero"><i class="fas fa-home"></i><span>Home</span></a></li>
         <li><a href="#about"><i class="fas fa-address-card"></i> <span>About</span></a></li>
         <li><a href="#playground"><i class="far fa-file-alt"></i> <span>Documantion</span></a></li>
@@ -105,7 +105,7 @@
 
         <div class="col-lg-12 col-md-12 col-sm-12">
 
-          <div id="top-text-editor" contenteditable="" translate="no" spellcheck="false" onkeydown="return false;" data-rellax-speed="3" class="rellax ">
+          <div id="top-text-editor" contenteditable="" translate="no" spellcheck="false"  onkeydown="return false;" data-rellax-speed="3" class="rellax ">
             <h1  class="color-primary font-weight" style="display: inline;margin-top: 1rem;"><span style="font-weight:700;">StyleIt</span></h1> <span> (Beta)
             </span>
             <p class="mt-5">
@@ -116,23 +116,7 @@
 
           <div data-rellax-speed="-4" class="rellaxsocial-links mx-auto mt-2 ">
             <script>
-              const config = {
-                global:true,
-                onKeyPress: [
-                  [
-                    66, () => styleIt.execCmd("font-weight", "700", StyleIt.MODES.Toggle, {
-                    unWrap: ["b"]
-                  }),
-                  85, () => styleIt.execCmd("text-decoration", "underline", StyleIt.MODES.Toggle, {
-                    unWrap: ["u"]
-                  }),
-                  73, () => styleIt.execCmd("font-style", "italic", StyleIt.MODES.Toggle, {
-                    unWrap: ["i"]
-                  })
-                ]
-                ],
-
-              }
+              var config = {}
               
               var _styleIt = new styleit("top-text-editor", config);
               setTimeout(() => {
@@ -206,10 +190,12 @@
 
   <main id="main">
 
-    <!-- ======= About Section ======= -->
-    <section id="about" class="about">
-      <div class="container" data-aos="fade-up">
+    
 
+    <section id="about" class="about">
+     
+      <div class="container" data-aos="fade-up">
+       
         <div class="section-title">
           <h2 class="screen-only">We Help Developers
           </h2>

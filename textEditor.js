@@ -442,6 +442,12 @@ function openEditor() {
                                 innerHTML: `<i class="fas fa-underline "></i>`,
                                 onclick: () => _styleIt.toggleClass("custom-underline")
                             },
+                            {
+                                tag: "button",
+                                className: "btn btn-light colorChange",
+                                innerHTML: `<i class="fas fa-color "></i>`,
+                                onclick: () => _styleIt.toggleClass("colorChange")
+                            },
                         ]
                     }
                 ]
@@ -528,14 +534,15 @@ function openEditor() {
                         isDetect = true;
                         _styleIt.execCmd("font-style", "italic", _styleIt.MODES.Toggle)
                     break;
+                    case "KeyZ":
+                    case "KeyY":
+                        isDetect = true;
+                    break;
                   
             }
             if(isDetect){
                 event.preventDefault(); 
             }
-        }
-        else {
-            console.log("Something else was pressed.");
         }
     });
     setTimeout(() => {

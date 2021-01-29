@@ -1223,12 +1223,13 @@ section {
 }
 
 .text-editor {
-  width: 306px;
+  width: fit-content;
   height: 34pt;
   margin-top: 5pt;
   border-top: 1px solid #ddd;
   box-shadow: 10px 10px 25px -16px rgba(0, 0, 0, 0.75);
   background: #fff;
+  padding: 3px;
 }
 
 .seperator {
@@ -1598,4 +1599,16 @@ code .comment, code .comment * {
     background-color: rgb(131, 20, 125);
   }
 }
+
+.colorChange{
+  animation: colorchange  2s infinite; /* animation-name followed by duration in seconds*/
+}
+@keyframes colorchange
+{
+  0%   {background: var(--primary); color: cyan;}
+  33%  {background: var(--primary); color: magenta;}
+  66%  {background: var(--secondary); color: yellow;}
+  100% {background: var(--primary); color: cyan;}
+}
+
 
