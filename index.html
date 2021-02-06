@@ -283,7 +283,7 @@
                 <br>
                 const styleIt = new StyleIt(*Element Object or Element Id*);
                 <br>
-                cont MODES = StyleIt.MODES;
+                cont MODES = styleIt.MODES;
               </code>
             </div>
 
@@ -318,7 +318,7 @@
                 <br>
                 const styleIt = new StyleIt(*Element Object or Element Id*);
                 <br>
-                const MODES = StyleIt.MODES;
+                const MODES = styleIt.MODES;
                 <br>
                 const underline =()=> styleIt.execCmd('text-decoration', 'underline', Modes.Toggle);
                 <br>
@@ -335,7 +335,7 @@
                 <br>
                 const styleIt = new StyleIt(*Element Object or Element Id*);
                 <br>
-                const MODES = StyleIt.MODES;
+                const MODES = styleIt.MODES;
                 <br>
                 const changeColor =(color)=> styleIt.execCmd('color', color, MODES.Extend);
                 <br>
@@ -348,7 +348,7 @@
             <br>
             <h2>With Options</h2>
             <p>
-              The <u>textAlign</u> property sets the horizontal alignment of text in a block level element.
+              The <u>textAlign, padding, margin, line-height and more </u> property sets the horizontal alignment of text in a block level element.
               It must be used on a block level element (p, div, etc.) 
 
             </p>
@@ -358,7 +358,7 @@
                 <br>
                 const styleIt = new StyleIt(*Element Object or Element Id*);
                 <br>
-                const MODES = StyleIt.MODES;
+                const MODES = styleIt.MODES;
                 <br>
                 const changeAlign =(align)=>   styleIt.execCmd('text-align', align, MODES.Extend,{
                   <br>
@@ -387,7 +387,7 @@
     <br>
     const styleIt = new StyleIt(*Element Object or Element Id*);
     <br>
-    const MODES = StyleIt.MODES;
+    const MODES = styleIt.MODES;
     <br>
     const changeAlign =(align)=>   styleIt.execCmd('font-weight', 'bold', MODES.Extend,{
       <br>
@@ -423,13 +423,13 @@
                 <tr>
                   <td>Target</td>
                   <td>{target:'block'}</td>
-                  <td>Will apply on the closest P or DIV tag element</td>
+                  <td>Will apply on the closest block element.</td>
              
                 </tr>
                 <tr>
                   <td>as</td>
                   <td>{as:'inline'}</td>
-                  <td>Will apply as inline inside P with block option </td>
+                  <td>Will apply as inline inside the block element, block option required.</td>
                 </tr>
                 <tr>
                   <td>unWrap</td>
