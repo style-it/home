@@ -1,7 +1,7 @@
 :root {
-  --primary: #333333;
-  --secondary: #7D5BA6  ;
-  --third: #86A59C;
+  --primary: #524f4f;
+  --secondary: #008F7A  ;
+  --third: #845EC2;
 }
 .mobile-only {
   display: none;
@@ -1530,23 +1530,7 @@ code .comment, code .comment * {
   top: -12%;
   position: absolute;
 }
-.font-weight:hover{
-  animation: bold-font .6s ease-in-out !important;
 
-}
-@keyframes bold-font {
-  from {
-    text-shadow:
-    -1px -1px 0 var(--primary),
-    1px -1px 0 var(--primary),
-    -1px 1px 0 var(--primary),
-    1px 1px 0 var(--primary);
-    -webkit-transition: all .5s;
-    -moz-transition: all .5s;
-    -o-transition: all .5s;
-    transition: all .5s;
-  }
-}
 .header-page .squares.square4 {
   height: 100px;
   width: 100px;
