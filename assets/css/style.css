@@ -1226,16 +1226,17 @@ section {
   width: fit-content;
   height: 34pt;
   margin-top: 5pt;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid rgba(221, 221, 221, 0.432);
   box-shadow: 10px 10px 25px -16px rgba(0, 0, 0, 0.75);
   background: #fff;
-  padding: 3px;
+  padding: 2px 0;
+  border-radius: 5px;
 }
 
 .seperator {
   display: inline;
   border-left: 1px solid #ddd;
-  height: 30pt;
+  height: 100%;
 }
 
 .text-editor-button {

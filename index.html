@@ -105,17 +105,33 @@
 
         <div class="col-lg-12 col-md-12 col-sm-12">
 
-          <div id="top-text-editor" contenteditable="" translate="no" spellcheck="false"  onkeydown="return false;" data-rellax-speed="3" class="rellax ">
+          <div id="top-text-editor" contenteditable="" translate="no" spellcheck="false"  onkeydown="return false;" onpaste="return false;"  data-rellax-speed="3" class="rellax ">
             <h1  class="color-primary font-weight" style="display: inline;margin-top: 1rem;"><span style="font-weight:700;">StyleIt</span></h1> <span> (Beta)
             </span>
             <p class="mt-5">
-              <span style="color: #45505b;font-size:26px;">With Super powers .</span>
+              <span style="color: #45505b;font-size:26px;">BADASS library  for building rich text editors </span>
             </p>
 
           </div>
 
           <div data-rellax-speed="-4" class="rellaxsocial-links mx-auto mt-2 ">
             <script>
+      function setCaret(el) {
+    var range = document.createRange()
+    var sel = window.getSelection()
+    
+    range.setStart(el.childNodes[1],1)
+    range.collapse(true)
+    
+    sel.removeAllRanges()
+    sel.addRange(range)
+}
+var contentEl = document.getElementById("top-text-editor");
+setCaret(contentEl);
+contentEl.addEventListener("paste",(e)=>{
+  e.preventDefault();
+    return false;
+})
               var config = {}
               
               var _styleIt = new styleit("top-text-editor", config);
@@ -205,8 +221,15 @@
 
             <div class="col-lg-6 col-sm-12 col-md-12 mx-auto">
               <p>
-                We can give your App Super powers to do things that you never thought possible. Let us delight your
-                customers and empower your needs... through pure styling.
+                StyleIt.js is A completely customizable for building rich text editors in the browser with user experience exacly like i want
+              </p>
+              <br/>
+              <br/>
+              <h5>
+                Why I created StyleIt ?
+              </h5>
+              <p>
+                Before i was created StyleIt, I tried a lot of the other rich text libraries out there, and i had very bad hacky things to get the user experience exacly like i want.
               </p>
             </div>
 
@@ -443,11 +466,7 @@
                       href="https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector">querySelector</a>
                   </td>
                 </tr>
-                <tr>
-                  <td>Selection</td>
-                  <td>{selection:false}</td>
-                  <td>selection false will prevent text to wrap with selection</td>
-                </tr>
+              
               </tbody>
             </table>
             <h2>Css Class API</h2>
@@ -724,10 +743,20 @@
                    
                   </td>
                   <td>
+                    completed ✔
+                  </td>
+                </tr>
+                <tr>
+                  <td>Paste</td>
+                  <td>
+                   
+                        with formatting from any website
+                   
+                  </td>
+                  <td>
                     in progress 🕔
                   </td>
                 </tr>
-            
                 <tr>
                   <td>
                     Code syntax
