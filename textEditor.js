@@ -472,7 +472,6 @@ function openEditor() {
     }
     const createTxtContentModal = () => {
         const conetnt = document.createElement("div");
-        conetnt.contentEditable = "true";
         conetnt.spellcheck = false;
         conetnt.translate = false;
         conetnt.className = "editor-conetnt--example";
